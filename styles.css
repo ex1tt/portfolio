@@ -1,0 +1,207 @@
+* {
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: 'Fira Code', monospace;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+}
+
+html {
+
+    --base-bg : rgb(215, 215, 215);
+    --main-bg: rgb(255, 255, 255);
+
+}
+
+body {
+    background-color: var(--base-bg);
+    width: 95%;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: #023c80;
+}
+
+section {
+
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    grid-template-areas: "top top"
+                         "middle-left middle-right"
+                         "bottom bottom"
+                         "footer footer";
+
+    gap: 3em;
+    margin: 6em;
+}
+
+article {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    background-color: var(--main-bg);
+    border-radius: 20px;
+    padding: 2em;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#footer {
+    grid-area: footer;
+}
+
+#footer p {
+    font-size: 0.9em;
+}
+
+article h1, h2, p{
+    padding: 1rem;
+}
+
+article p {
+    font-size: 1.2em;
+}
+
+#header {
+    grid-area: top;
+}
+
+#bio h1 {
+    font-size: 2em;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+#contact {
+    grid-area: middle-left;
+}
+
+#contact img {
+
+    width: 2em;
+    margin: 1em;
+}
+
+#contact .container {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#skills {
+    grid-area: middle-right;
+    align-items: center;
+    justify-content: center;
+}
+
+#portfolio {
+    grid-area: bottom;
+}
+
+a#cv-link {
+    color: green;
+}
+
+article:hover {
+    transform: scale(1.02); /* Expands the element */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increases shadow */
+}
+
+.skills {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skills > img {
+
+    width: 3.5em;
+    margin: 1.5em;
+
+}
+
+a#top-link {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: lightblue;
+}
+
+#portfolio {
+    display: flex;
+    align-items: center;
+}
+
+.repo {
+    margin: 2em 0;
+    padding: 1.2em;
+    border-radius: 20px;
+    background-color: var(--main-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.repo:hover {
+    transform: scale(1.01); /* Expands the element */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increases shadow */
+}
+
+.repo a {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #007acc;
+    text-decoration: none;
+}
+
+.repo p {
+    font-size: 1.1em;
+}
+
+.repo a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 800px){
+
+    :root {
+        font-size: 12px;
+    }
+
+    body {
+        width: 98%;
+    }
+
+    section {
+
+        margin: 2em;
+        grid-template-columns: 1fr;
+
+        grid-template-areas: "top"
+                         "middle-left" 
+                         "middle-right"
+                         "bottom"
+                         "footer"
+    }
+
+    .skills > img {
+
+        width: 2.5em;
+        margin: 1em;
+    
+    }
+}
